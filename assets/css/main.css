@@ -953,6 +953,25 @@ section,
   top: calc(50% - 47px);
 }
 
+.medsos .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  border: 1px solid #999;
+  border-radius: 50%;
+  color: #1d1d1d;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.medsos .social-links a:hover {
+  color: #fff;
+  border-color: #fff;
+  background-color: #666;
+}
 /*--------------------------------------------------------------
 # Why Us Section
 --------------------------------------------------------------*/
