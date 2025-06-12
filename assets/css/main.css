@@ -765,7 +765,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -1107,6 +1107,13 @@ section,
 --------------------------------------------------------------*/
 .menu .nav-tabs {
   border: 0;
+  
+}
+
+.header {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
+  z-index: 1000;
 }
 
 .menu .nav-link {
@@ -1673,3 +1680,17 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+  .swiper-slide .menu-img {
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .swiper-slide h4 {
+    margin: 10px 0 5px;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }

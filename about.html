@@ -8,7 +8,6 @@
     <meta name="keywords" content="">
   
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
@@ -36,37 +35,10 @@
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
     <style>
-        h4 {
-            color: rgb(0, 0, 0);
-            margin-bottom: 15px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 5px;
-        }
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border: 1px solid #999;
-            border-radius: 50%;
-            color: #2c2b2b;
-            text-decoration: none;
-            font-size: 18px;
-            transition: 0.3s ease;
-          }
-          .social-links a:hover {
-            color: #fff;
-            border-color: #fff;
-            background-color: #666;
-          }
         .section-title {
             text-align: center;
             padding: 30px !important;
-            margin-top: -100px;
+            margin-top: -50px;
             position: relative;
         }
   
@@ -79,22 +51,33 @@
           <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Warung</h1>
+            <h1 class="sitename">Rasty Kichen</h1>
             <span>.</span>
           </a>
     
           <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a href="index.html" class="active">Home<br></a></li>
+              <li><a href="index.html">Home<br></a></li>
               <li><a href="menu.html">Menu</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
-    
-          <a class="btn-getstarted" href="index.html#book-a-table">Book a Table</a>
-    
+
+          <script>
+            const currentPath = window.location.pathname.split("/").pop(); // Dapatkan nama file saat ini
+            const navLinks = document.querySelectorAll("#navmenu a");
+
+            navLinks.forEach(link => {
+              const linkPath = link.getAttribute("href");
+              if (linkPath === currentPath) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+      </script>
         </div>
       </header>
 
@@ -110,13 +93,13 @@
   
           <div class="row gy-4">
             <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
-              <img src="assets/img/about.jpg" class="img-fluid mb-4" alt="">
+             <img src="assets/img/gallery//warung-makan-.jpeg" class="img-fluid mb-4" alt="">
               
             </div>
             <div class="col-lg-5" data-aos="fade-up" data-aos-delay="250">
               <div class="content ps-0 ps-lg-5">
                 <p >
-                  Warung Makan [Nama Warung] adalah tempat makan yang menyajikan hidangan rumahan dengan cita rasa khas dan harga yang terjangkau. Kami hadir untuk memberikan pengalaman makan yang nyaman, lezat, dan memuaskan bagi setiap pelanggan.
+                  Rasty Kichen adalah tempat makan yang menyajikan hidangan rumahan dengan cita rasa khas dan harga yang terjangkau. Kami hadir untuk memberikan pengalaman makan yang nyaman, lezat, dan memuaskan bagi setiap pelanggan.
                   Dengan menggunakan bahan-bahan segar dan bumbu pilihan, kami menyajikan berbagai menu favorit mulai dari masakan tradisional Indonesia hingga minuman segar yang cocok dinikmati kapan saja. Pelayanan yang ramah dan suasana yang bersahabat menjadi nilai utama yang kami jaga setiap hari.Kami juga melayani pesanan Take Away dan Catering/Prasmanan untuk acara keluarga, kantor, hingga hajatan. Kepuasan Anda adalah prioritas kami.
                 </p>
                 <h4>jam Buka:</h4>
@@ -124,15 +107,13 @@
                   <li><i class="bi bi-check-circle-fill"></i> <span>Senin - Sabtu = 07.00</span></li>
                   <li><i class="bi bi-check-circle-fill"></i> <span>Minggu = Libur</span></li>
                 </ul>
-
+                 <div class="medsos">
                     <h4>Follow Us:</h4>
                     <div class="social-links d-flex">
-                      <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-                      <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                      <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                      <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                     <a href="https://web.facebook.com/profile.php?id=100077744425618" class="facebook"><i class="bi bi-facebook"></i></a>
+                     <a href="https://www.instagram.com/rinaii_www/" class="instagram"><i class="bi bi-instagram"></i></a>
                     </div>
-               
+                  </div>
               </div>
             </div>
           </div>
@@ -196,7 +177,7 @@
 
     <div class="col-lg-4 col-md-6">
       <div class="d-flex align-items-start gap-3">
-        <i class="bi bi-telephone fs-3 text-danger"></i>
+        <i class="icon bi bi-geo-alt flex-shrink-0"></i>
         <div>
           <h4>Contact</h4>
           <p>
@@ -224,7 +205,7 @@
         <div>
           <h4>Jam Buka</h4>
           <p>
-            <strong>Senin - Sabtu:</strong> <span>07.00 - 17.--</span><br>
+            <strong>Senin - Sabtu:</strong> <span>07.00 - 17.00</span><br>
             <strong>Minggu:</strong> <span>Libur</span>
           </p>
         </div>
@@ -235,8 +216,8 @@
           <div class="social-links">
             <h4>Follow Us</h4>
             <div class="d-flex">
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://web.facebook.com/profile.php?id=100077744425618" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/rinaii_www/" class="instagram"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
 

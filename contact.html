@@ -8,7 +8,6 @@
     <meta name="keywords" content="">
   
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   
@@ -40,7 +39,7 @@
         .section-title {
             text-align: center;
             padding: 30px !important;
-            margin-top: -100px;
+            margin-top: -50px;
             position: relative;
         }
     </style>
@@ -52,21 +51,33 @@
           <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Warung</h1>
+            <h1 class="sitename">Rasty Kichen</h1>
             <span>.</span>
           </a>
     
           <nav id="navmenu" class="navmenu">
             <ul>
-              <li><a href="index.html" class="active">Home<br></a></li>
+              <li><a href="index.html" >Home<br></a></li>
               <li><a href="menu.html">Menu</a></li>
               <li><a href="about.html">About</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
           </nav>
-    
-          <a class="btn-getstarted" href="index.html#book-a-table">Book a Table</a>
+
+          <script>
+            const currentPath = window.location.pathname.split("/").pop(); // Dapatkan nama file saat ini
+            const navLinks = document.querySelectorAll("#navmenu a");
+
+            navLinks.forEach(link => {
+              const linkPath = link.getAttribute("href");
+              if (linkPath === currentPath) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+           </script>
     
         </div>
       </header>
@@ -161,9 +172,9 @@
 
     <div class="col-lg-4 col-md-6">
       <div class="d-flex align-items-start gap-3">
-        <i class="bi bi-telephone fs-3 text-danger"></i>
+       <i class="icon bi bi-geo-alt flex-shrink-0"></i>
         <div>
-          <h4>Contact</h4>
+          <h4>Alamat</h4>
           <p>
             Dusun Rejoagung, Sumberagung, Kec. Pesanggaran, Kabupaten Banyuwangi, Jawa Timur 68488
           </p>
@@ -189,7 +200,7 @@
         <div>
           <h4>Jam Buka</h4>
           <p>
-            <strong>Senin - Sabtu:</strong> <span>07.00 - 17.--</span><br>
+            <strong>Senin - Sabtu:</strong> <span>07.00 - 17.00</span><br>
             <strong>Minggu:</strong> <span>Libur</span>
           </p>
         </div>
@@ -200,8 +211,8 @@
           <div class="social-links">
             <h4>Follow Us</h4>
             <div class="d-flex">
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+           <a href="https://web.facebook.com/profile.php?id=100077744425618" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/rinaii_www/" class="instagram"><i class="bi bi-instagram"></i></a>
             </div>
           </div>
 
