@@ -18,14 +18,15 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #37373f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #ce1212; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-}
+:root {
+      --primary-color: #FF6B35;
+      --secondary-color: #2D3047;
+      --accent-color: #FFB400;
+      --text-color: #2D3047;
+      --light-bg: #FFF9F0;
+      --dark-bg: #2D3047;
+      --gradient-primary: linear-gradient(45deg, #FF6B35, #FFB400);
+    }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
@@ -60,11 +61,12 @@
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
-body {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-family: var(--default-font);
-}
+ body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+    }
 
 a {
   color: var(--accent-color);
@@ -77,15 +79,10 @@ a:hover {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--heading-color);
-  font-family: var(--heading-font);
-}
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Playfair Display', serif;
+    }
 
 /* Pulsating Play Button
 ------------------------------*/
@@ -221,72 +218,38 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
-.header {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 20px 0;
-  transition: all 0.5s;
-  z-index: 997;
-}
+/* Header Styles */
+    .header {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+      padding: 15px 0;
+      transition: all 0.3s ease;
+    }
 
-.header .logo {
-  line-height: 1;
-}
+    .header.scrolled {
+      padding: 10px 0;
+      background: rgba(255, 255, 255, 0.98);
+    }
 
-.header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
-}
+    .sitename {
+      color: var(--primary-color);
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: -0.5px;
+    }
 
-.header .logo h1 {
-  font-size: 30px;
-  margin: 0;
-  font-weight: 700;
-  color: var(--heading-color);
-  font-family: var(--default-font);
-}
+    .navmenu ul li a {
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
 
-.header .logo span {
-  color: var(--accent-color);
-  font-size: 36px;
-}
-
-.header .btn-getstarted,
-.header .btn-getstarted:focus {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 14px;
-  padding: 8px 26px;
-  margin: 0;
-  border-radius: 50px;
-  transition: 0.3s;
-}
-
-.header .btn-getstarted:hover,
-.header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-@media (max-width: 1200px) {
-  .header .logo {
-    order: 1;
-  }
-
-  .header .btn-getstarted {
-    order: 2;
-    margin: 0 15px 0 0;
-    padding: 6px 20px;
-  }
-
-  .header .navmenu {
-    order: 3;
-  }
-}
-
-.scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
+    .navmenu ul li a:hover,
+    .navmenu ul li a.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -552,64 +515,101 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-.footer {
-  --heading-font: var(--default-font);
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
-  padding: 40px 0;
-  position: relative;
-}
+/* Footer Styles */
+    .footer {
+      background: var(--dark-bg);
+      color: white;
+      padding: 100px 0 0;
+      position: relative;
+    }
 
-.footer .icon {
-  color: var(--accent-color);
-  margin-right: 15px;
-  font-size: 24px;
-  line-height: 0;
-}
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--gradient-primary);
+    }
 
-.footer h4 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
+    .footer h4 {
+      color: var(--accent-color);
+      margin-bottom: 25px;
+      font-weight: 600;
+      font-size: 1.4rem;
+    }
 
-.footer .address p {
-  margin-bottom: 0px;
-}
+    .footer p {
+      line-height: 1.8;
+      opacity: 0.8;
+    }
 
-.footer .social-links a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-right: 10px;
-  transition: 0.3s;
-}
+    .footer-links {
+      list-style: none;
+      padding: 0;
+    }
 
-.footer .social-links a:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
+    .footer-links li {
+      margin-bottom: 15px;
+    }
 
-.footer .copyright {
-  padding-top: 20px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      opacity: 0.8;
+    }
 
-.footer .copyright p {
-  margin-bottom: 0;
-}
+    .footer-links a:hover {
+      color: var(--accent-color);
+      opacity: 1;
+      padding-left: 5px;
+    }
 
-.footer .credits {
-  margin-top: 5px;
-  font-size: 13px;
-}
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: var(--gradient-primary);
+      transform: translateY(-5px);
+      color: white;
+    }
+
+    .social-links a i {
+      transition: transform 0.3s ease;
+    }
+
+    .social-links a:hover i {
+      transform: scale(1.2);
+    }
+
+    .copyright {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 25px 0;
+      margin-top: 60px;
+    }
+
+    .copyright p {
+      margin: 0;
+    }
 
 /*--------------------------------------------------------------
 # Preloader
@@ -796,74 +796,61 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero {
-  width: 100%;
-  min-height: 60vh;
-  position: relative;
-  padding: 60px 0;
-  display: flex;
-  align-items: center;
-}
+/* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('assets/img/hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 120px 0;
+      overflow: hidden;
+    }
 
-.hero h1 {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 700;
-}
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(255, 180, 0, 0.1));
+      z-index: 1;
+    }
 
-.hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  margin: 5px 0 30px 0;
-  font-size: 20px;
-  font-weight: 400;
-}
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
 
-.hero .btn-get-started {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-weight: 400;
-  font-size: 15px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 10px 28px 12px 28px;
-  border-radius: 50px;
-  transition: 0.5s;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-}
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
 
-.hero .btn-get-started:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1);
-}
+    .hero p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
 
-.hero .btn-watch-video {
-  font-size: 16px;
-  transition: 0.5s;
-  margin-left: 25px;
-  color: var(--default-color);
-  font-weight: 500;
-}
+    .btn-get-started {
+      background: var(--gradient-primary);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    }
 
-.hero .btn-watch-video i {
-  color: var(--accent-color);
-  font-size: 32px;
-  transition: 0.3s;
-  line-height: 0;
-  margin-right: 8px;
-}
-
-.hero .btn-watch-video:hover {
-  color: var(--accent-color);
-}
-
-.hero .btn-watch-video:hover i {
-  color: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
-
-.hero .animated {
-  animation: up-down 2s ease-in-out infinite alternate-reverse both;
-}
+    .btn-get-started:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+      color: white;
+    }
 
 @media (max-width: 640px) {
   .hero h1 {
@@ -1105,110 +1092,85 @@ section,
 /*--------------------------------------------------------------
 # Menu Section
 --------------------------------------------------------------*/
-.menu .nav-tabs {
-  border: 0;
-  
-}
+/* Menu Section */
+    .menu {
+      padding: 100px 0;
+      background: white;
+    }
 
-.header {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.3s ease;
-  z-index: 1000;
-}
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
 
-.menu .nav-link {
-  background-color: var(--background-color);
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 0 15px;
-  padding: 10px 5px;
-  transition: 0.3s;
-  border-radius: 0;
-  cursor: pointer;
-  height: 100%;
-  border: 0;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 80%);
-}
+    .section-title p {
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
 
-@media (max-width: 575px) {
-  .menu .nav-link {
-    margin: 0 10px;
-    padding: 10px 0;
-  }
-}
+    .section-title .description-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-color);
+    }
 
-.menu .nav-link i {
-  padding-right: 15px;
-  font-size: 48px;
-}
+    .nav-tabs {
+      border: none;
+      margin-bottom: 40px;
+    }
 
-.menu .nav-link h4 {
-  font-size: 18px;
-  font-weight: 400;
-  margin: 0;
-  font-family: var(--default-font);
-}
+    .nav-tabs .nav-link {
+      border: none;
+      padding: 15px 30px;
+      border-radius: 50px;
+      margin: 0 10px;
+      font-weight: 500;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
 
-@media (max-width: 575px) {
-  .menu .nav-link h4 {
-    font-size: 16px;
-  }
-}
+    .nav-tabs .nav-link.active {
+      background: var(--gradient-primary);
+      color: white;
+    }
 
-.menu .nav-link:hover {
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
+    .menu-item {
+      background: white;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
 
-.menu .nav-link.active {
-  background-color: var(--background-color);
-  color: var(--accent-color);
-  border-color: var(--accent-color);
-}
+    .menu-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
 
-.menu .tab-content .tab-header {
-  padding: 30px 0;
-}
+    .menu-img {
+      border-radius: 15px;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-.menu .tab-content .tab-header p {
-  font-size: 14px;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-bottom: 0;
-}
+    .menu-item h4 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--secondary-color);
+    }
 
-.menu .tab-content .tab-header h3 {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--accent-color);
-}
-
-.menu .tab-content .menu-item {
-  text-align-last: center;
-}
-
-.menu .tab-content .menu-item .menu-img {
-  padding: 0 60px;
-  margin-bottom: 15px;
-}
-
-.menu .tab-content .menu-item h4 {
-  font-size: 24px;
-  font-weight: 400;
-  margin-bottom: 5px;
-  font-family: var(--default-font);
-}
-
-.menu .tab-content .menu-item .ingredients {
-  font-family: var(--nav-font);
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  margin-bottom: 5px;
-}
-
-.menu .tab-content .menu-item .price {
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--accent-color);
-}
+    .price {
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-top: auto;
+    }
 
 /*--------------------------------------------------------------
 # Testimonials Section
